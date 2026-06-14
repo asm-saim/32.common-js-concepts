@@ -24,4 +24,6 @@ console.log(true === 1);     // false
 console.log(false === 0);    // false
 console.log(5 === 5);        // true
 
-
+//tricky Example:
+console.log("" === 0);
+console.log([] === false);
