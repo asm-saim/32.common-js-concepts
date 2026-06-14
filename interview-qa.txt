@@ -1,0 +1,243 @@
+1. What data types are available in JavaScript?
+
+JavaScript has 8 data types:
+
+Primitive Types
+String → "Hello"
+Number → 10, 3.14
+Boolean → true, false
+Undefined → variable declared but not assigned a value
+Null → intentionally empty value
+BigInt → 12345678901234567890n
+Symbol → unique identifier
+
+Non-Primitive Type
+Object → Objects, Arrays, Functions, Dates, etc.
+
+**Difference Between undefined and null
+
+Feature            : undefined                     | null
+---------------------------------------------------------------
+Meaning            : Not assigned                  | Intentionally empty
+Assigned by        : JavaScript automatically      | Developer manually
+Type               : undefined                     | object (historical bug)
+Represents         : Missing value                 | Empty value
+Equality (==)      : Equal to null                 | Equal to undefined
+Strict Equality    : Not equal to null             | Not equal to undefined
+
+
+2. What type are Functions and Arrays in JavaScript?
+
+Both Functions and Arrays are special types of Objects.
+
+typeof []           // "object"
+typeof {}           // "object"
+typeof function(){} // "function"
+
+Although typeof returns "function" for functions, functions are still objects in JavaScript.
+
+
+3. How do you check whether a variable is an array?
+
+Use Array.isArray().
+
+const arr = [1, 2, 3];
+
+Array.isArray(arr); // true
+
+const obj = {};
+
+Array.isArray(obj); // false
+
+
+4. Difference between undefined and null
+
+undefined :Means a variable exists but has not been assigned a value.
+
+let x;
+
+console.log(x); // undefined
+
+null: Means the developer intentionally set the value to empty.
+
+let user = null;
+
+
+Summary
+undefined            null
+Automatic            Manually assigned
+Value not assigned   Intentionally empty
+Type: undefined      Type: object (historical JS bug)
+
+
+5. Difference between == and ===
+
+Double Equal (==)
+Compares values after type conversion.
+
+5 == "5" // true
+
+Triple Equal (===)
+Compares both value and type.
+
+5 === "5" // false
+
+Example:
+0 == false   // true
+0 === false  // false
+
+Always prefer ===.
+
+
+6. What is Implicit Conversion?
+
+Implicit conversion (type coercion) happens when JavaScript automatically converts one data type into another.
+
+"5" + 2 → "52"
+
+JavaScript converts number to string.
+
+"5" * 2 → 10
+
+JavaScript converts string to number.
+
+
+7. What are the different scopes in JavaScript?
+
+Global Scope
+Accessible from anywhere.
+
+let name = "Saim";
+
+Function Scope
+Variables declared with var inside a function.
+
+function test() {
+    var age = 15;
+}
+
+Block Scope
+Variables declared with let and const inside {}.
+
+if (true) {
+    let x = 10;
+}
+
+
+8. What is Block Scope? What scope do let and const create?
+
+A block is anything inside {}.
+
+if (true) {
+    let x = 10;
+    const y = 20;
+}
+
+x and y are only accessible inside that block.
+
+console.log(x); // Error
+
+Both let and const create block scope.
+
+
+9. What is a Closure? (Advanced)
+
+A closure is created when an inner function remembers variables from its outer function even after the outer function has finished executing.
+
+function outer() {
+    let count = 0;
+
+    return function inner() {
+        count++;
+        return count;
+    };
+}
+
+const counter = outer();
+
+console.log(counter()); // 1
+console.log(counter()); // 2
+
+Uses:
+Data privacy
+Counters
+Function factories
+Event handlers
+
+
+10. What is a Callback Function?
+
+A callback is a function passed as an argument to another function.
+
+function greet(name, callback) {
+    console.log("Hello " + name);
+    callback();
+}
+
+function sayBye() {
+    console.log("Bye!");
+}
+
+greet("Saim", sayBye);
+
+Output:
+Hello Saim
+Bye!
+
+
+11. What is Hoisting?
+
+Hoisting is JavaScript's behavior of moving declarations to the top of their scope before execution.
+
+var:
+console.log(x);
+var x = 5;
+
+Becomes:
+var x;
+console.log(x); // undefined
+x = 5;
+
+let and const:
+console.log(x);
+let x = 5;
+
+Result:
+ReferenceError (Temporal Dead Zone)
+
+
+12. Which variables are passed by reference and which by value?
+
+Passed by Value (Primitive Types)
+String, Number, Boolean, Undefined, Null, Symbol, BigInt
+
+let a = 10;
+let b = a;
+b = 20;
+
+console.log(a); // 10
+
+Passed by Reference (Non-Primitive Types)
+Objects, Arrays, Functions
+
+const person1 = { name: "Saim" };
+const person2 = person1;
+
+person2.name = "Rahim";
+
+console.log(person1.name); // Rahim
+
+
+Interview Summary
+Primitive Types: String, Number, Boolean, Undefined, Null, Symbol, BigInt
+Non-Primitive: Object
+Array is object → Array.isArray()
+undefined = not assigned, null = intentional empty
+== allows type conversion, === does not
+Implicit conversion = automatic type conversion
+Scopes: Global, Function, Block
+let and const create block scope
+Closure = inner function remembers outer variables
+Callback = function passed as argument
+Hoisting = declarations moved to top before execution
+Primitive = value copy, Object = reference copy
