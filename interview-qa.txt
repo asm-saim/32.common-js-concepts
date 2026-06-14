@@ -259,3 +259,6 @@ Primitive = value copy, Object = reference copy
 
 !value → "Is this value falsy?"
 !!value → "Convert this value to a true/false boolean."
+
+
+//
