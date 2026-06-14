@@ -11,7 +11,10 @@ console.log(null == undefined); // true
 //tricky Example:
 console.log("" == 0);
 console.log([] == false);
-
+console.log('array equal',[]==[]); //cause, they are non-primitive, and diff reference.
+//In loose equality:
+// Primitive values: Compare VALUE
+// Non-primitive values (Object, Array, Function): Compare REFERENCE
 
 
 // === (Strict Equality)
