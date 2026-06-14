@@ -241,3 +241,21 @@ Closure = inner function remembers outer variables
 Callback = function passed as argument
 Hoisting = declarations moved to top before execution
 Primitive = value copy, Object = reference copy
+
+//truthy and falsy values:
+//shortcut : there are few types of falsy value, everything else is truthy:
+//Falsy Values:
+// false
+// 0
+// -0
+// 0n      // BigInt zero
+// ""      // Empty string
+// null
+// undefined
+// NaN
+
+//! (Logical NOT) -It converts the value to a boolean and then reverses it.
+//!!(Double NOT) - The first ! converts the value to a boolean and reverses it.
+
+!value → "Is this value falsy?"
+!!value → "Convert this value to a true/false boolean."
