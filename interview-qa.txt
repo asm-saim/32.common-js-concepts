@@ -254,13 +254,15 @@ Primitive = value copy, Object = reference copy
 // undefined
 // NaN
 
+-----------------------------------------------
 //! (Logical NOT) -It converts the value to a boolean and then reverses it.
 //!!(Double NOT) - The first ! converts the value to a boolean and reverses it.
 
+-----------------------------------------------
 !value → "Is this value falsy?"
 !!value → "Convert this value to a true/false boolean."
 
-
+-----------------------------------------------
 //scope:
 1. Global Scope :A variable declared outside any function or block is globally scoped. 
 2. Function Scope: Variables declared with var inside a function are only accessible within that function.
