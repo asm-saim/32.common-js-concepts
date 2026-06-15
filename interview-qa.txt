@@ -261,4 +261,12 @@ Primitive = value copy, Object = reference copy
 !!value → "Convert this value to a true/false boolean."
 
 
-//
+//scope:
+1. Global Scope :A variable declared outside any function or block is globally scoped. 
+2. Function Scope: Variables declared with var inside a function are only accessible within that function.
+3.Block Scope: Variables declared with let and const are block-scoped.
+A block is anything inside {}.
+4. Lexical Scope: A function can access variables from its own scope and its outer (parent) scope.
+
+*var ignores block scope.
+*let, const respects block scope.
