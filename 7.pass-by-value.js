@@ -13,6 +13,14 @@ let person2 = person1; // obj2 points to the same object
 person2.name = "Bob";
 console.log(person1);
 
+//Ex:2
+let people1 = { name: "Denial" };
+let people2 = people1;
+people2.name = "Saim";
+console.log(people1)
+
+
+
 // A simple way to remember it: think of a primitive as writing a number on a sticky note — copying the note gives you a separate number. An object is like a house — the variable is just an address. If you give someone the address and they repaint the house, it's the same house for everyone who has that address.
 
 // One tricky bit: if you reassign the variable itself (not modify its contents), it doesn't affect the other variable:
